@@ -1,0 +1,83 @@
+{
+  "name": "diggerer",
+  "version": "0.0.1",
+  "description": "A modern version of the Digger game (Windmill Software 1983)",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack-dev-server",
+    "build": "webpack --mode production",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "eslint": "eslint ./src --ext .tsx --ext .ts",
+    "eslint:fix": "npm run eslint -- --fix",
+    "tsc": "tsc --noEmit"
+  },
+  "keywords": [
+    "digger",
+    "react",
+    "typescript",
+    "svg"
+  ],
+  "author": "Ya'ar Hever <yaarhever@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
+  },
+  "devDependencies": {
+    "@types/enzyme": "^3.9.3",
+    "@types/enzyme-adapter-react-16": "^1.0.5",
+    "@types/jest": "^24.0.13",
+    "@types/node": "^12.0.4",
+    "@types/react": "^16.8.19",
+    "@types/react-dom": "^16.8.4",
+    "@typescript-eslint/eslint-plugin": "^1.9.0",
+    "enzyme": "^3.9.0",
+    "enzyme-adapter-react-16": "^1.13.2",
+    "eslint": "^5.16.0",
+    "eslint-config-prettier": "^4.3.0",
+    "eslint-plugin-react": "^7.13.0",
+    "fork-ts-checker-webpack-plugin": "^1.3.4",
+    "html-webpack-plugin": "^3.2.0",
+    "husky": "^2.3.0",
+    "jest": "^24.8.0",
+    "prettier": "^1.17.1",
+    "pretty-quick": "^1.11.0",
+    "ts-jest": "^24.0.2",
+    "ts-loader": "^6.0.2",
+    "ts-node": "^8.2.0",
+    "tsconfig-paths-webpack-plugin": "^3.2.0",
+    "typescript": "^3.5.1",
+    "webpack": "^4.32.2",
+    "webpack-cli": "^3.3.2",
+    "webpack-dev-server": "^3.4.1"
+  },
+  "jest": {
+    "testPathIgnorePatterns": [
+      "/node_modules/",
+      "/lib/"
+    ],
+    "testRegex": "(/src/.*\\.(test|spec))\\.(ts|tsx|js)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js"
+    ],
+    "roots": [
+      "<rootDir>/src"
+    ],
+    "setupFiles": [
+      "<rootDir>/jest-setup.ts"
+    ],
+    "preset": "ts-jest",
+    "testMatch": null,
+    "modulePaths": [
+      "src"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
+  }
+}
