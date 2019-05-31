@@ -12,7 +12,7 @@
     "eslint:fix": "npm run eslint -- --fix",
     "tsc": "tsc --noEmit",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook -c .storybook -s public -o storybook-static"
   },
   "keywords": [
     "digger",
@@ -45,6 +45,7 @@
     "@types/styled-components": "^4.1.15",
     "@typescript-eslint/eslint-plugin": "^1.9.0",
     "babel-loader": "^8.0.6",
+    "babel-preset-react-app": "^9.0.0",
     "enzyme": "^3.9.0",
     "enzyme-adapter-react-16": "^1.13.2",
     "eslint": "^5.16.0",
