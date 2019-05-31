@@ -10,7 +10,9 @@
     "test:watch": "jest --watch",
     "eslint": "eslint ./src --ext .tsx --ext .ts",
     "eslint:fix": "npm run eslint -- --fix",
-    "tsc": "tsc --noEmit"
+    "tsc": "tsc --noEmit",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "keywords": [
     "digger",
@@ -50,7 +52,13 @@
     "typescript": "^3.5.1",
     "webpack": "^4.32.2",
     "webpack-cli": "^3.3.2",
-    "webpack-dev-server": "^3.4.1"
+    "webpack-dev-server": "^3.4.1",
+    "@storybook/react": "^5.0.11",
+    "@storybook/addon-actions": "^5.0.11",
+    "@storybook/addon-links": "^5.0.11",
+    "@storybook/addons": "^5.0.11",
+    "@babel/core": "^7.4.5",
+    "babel-loader": "^8.0.6"
   },
   "jest": {
     "testPathIgnorePatterns": [
