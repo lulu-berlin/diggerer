@@ -1,6 +1,7 @@
 const path = require("path");
 const { TsConfigPathsPlugin } = require("awesome-typescript-loader");
 const SRC_PATH = path.join(__dirname, "../src");
+//dont need stories path if you have your stories inside your //components folder
 
 module.exports = ({ config }) => {
   config.module.rules.push({
@@ -10,11 +11,12 @@ module.exports = ({ config }) => {
       {
         loader: "awesome-typescript-loader",
         options: {
-          configFileName: "./.storybook/tsconfig.json",
-          baseUrl: "src"
+          configFileName: "./.storybook/tsconfig.json"
         }
       },
-      { loader: require.resolve("react-docgen-typescript-loader") }
+      {
+        loader: "react-docgen-typescript-loader"
+      }
     ]
   });
   config.resolve.extensions.push(".ts", ".tsx");
