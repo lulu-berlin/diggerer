@@ -1,24 +1,27 @@
 const path = require("path");
-const TsconfigPathsPlugin = require("tsconfig-paths-webpack-plugin");
+const { TsConfigPathsPlugin } = require("awesome-typescript-loader");
+const SRC_PATH = path.join(__dirname, "../src");
 
 module.exports = ({ config }) => {
-  config.resolve.extensions.push(".ts", ".tsx");
   config.module.rules.push({
     test: /\.(ts|tsx)$/,
-    loader: require.resolve("babel-loader"),
-    options: {
-      presets: [["react-app", { flow: false, typescript: true }]]
-    }
+    include: [SRC_PATH],
+    use: [
+      {
+        loader: "awesome-typescript-loader",
+        options: {
+          configFileName: "./.storybook/tsconfig.json",
+          baseUrl: "src"
+        }
+      },
+      { loader: require.resolve("react-docgen-typescript-loader") }
+    ]
   });
-
-  config.resolve.plugins = config.resolve.plugins || [];
-  config.resolve.plugins.push(
-    new TsconfigPathsPlugin({
-      configFile: path.resolve(__dirname, "../tsconfig.json")
+  config.resolve.extensions.push(".ts", ".tsx");
+  config.resolve.plugins = [
+    new TsConfigPathsPlugin({
+      configFileName: "./.storybook/tsconfig.json"
     })
-  );
-  config.resolve.modules.push(path.resolve(__dirname, "../src"));
-
-  config.devtool = "source-map";
+  ];
   return config;
 };
