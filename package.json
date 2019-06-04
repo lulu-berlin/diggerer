@@ -12,7 +12,7 @@
     "eslint:fix": "npm run eslint -- --fix",
     "tsc": "tsc --noEmit",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook -c .storybook -s public -o storybook-static"
+    "build-storybook": "build-storybook"
   },
   "keywords": [
     "digger",
@@ -29,10 +29,6 @@
   },
   "devDependencies": {
     "@babel/core": "^7.4.5",
-    "@storybook/addon-actions": "^5.0.11",
-    "@storybook/addon-links": "^5.0.11",
-    "@storybook/addons": "^5.0.11",
-    "@storybook/react": "^5.0.11",
     "@types/enzyme": "^3.9.3",
     "@types/enzyme-adapter-react-16": "^1.0.5",
     "@types/jest": "^24.0.13",
@@ -66,7 +62,11 @@
     "typescript": "^3.5.1",
     "webpack": "^4.32.2",
     "webpack-cli": "^3.3.2",
-    "webpack-dev-server": "^3.4.1"
+    "webpack-dev-server": "^3.4.1",
+    "@storybook/react": "^5.0.11",
+    "@storybook/addon-actions": "^5.0.11",
+    "@storybook/addon-links": "^5.0.11",
+    "@storybook/addons": "^5.0.11"
   },
   "jest": {
     "testPathIgnorePatterns": [
